@@ -16,13 +16,13 @@ $extra_large: 1220px;
 }
 
 @mixin lg {
-  @media (min-width: #{large}) {
+  @media (min-width: #{$large}) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: #{extra_large}) {
+  @media (min-width: #{$extra_large}) {
     @content;
   }
 }
