@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Quantico:wght@400;700&display=swap');
+
+@import './abstracts/mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Archivo', sans-serif;
+}
+
+html {
+  font-size: 50%;
+
+  @include sm {
+    font-size: 55%;
+  }
+
+  @include md {
+    font-size: 58%;
+  }
+
+  @include lg {
+    font-size: 62.5%; // 1rem = 10px
+  }
+}
