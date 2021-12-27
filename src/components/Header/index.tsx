@@ -6,7 +6,7 @@ import Logo from '../../assets/logo.svg';
 
 import styles from './styles.module.scss';
 
-const Header: React.FC = () => {
+const Header: React.FC = function () {
   return (
     <div className={styles.container}>
       <img src={Logo} alt="logo find movies" />

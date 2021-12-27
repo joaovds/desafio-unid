@@ -8,7 +8,7 @@ import Section from '../../components/Section';
 
 import styles from './styles.module.scss';
 
-const Home: React.FC = () => {
+const Home: React.FC = function () {
   return (
     <div className={styles.container}>
       <Header />
@@ -22,6 +22,7 @@ const Home: React.FC = () => {
 
       <Section name="Em cartaz" query="now_playing" />
       <Section name="Populares" query="popular" />
+      <Section name="Melhor avaliação" query="top_rated" />
     </div>
   );
 };

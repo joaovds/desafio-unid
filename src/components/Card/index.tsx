@@ -4,28 +4,37 @@ import { BsStarFill } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
 
-const Card: React.FC = () => {
+interface Movie {
+  id: number;
+  poster_path: string;
+  title: string;
+  vote_average: number;
+}
+
+interface IProps {
+  movie: Movie;
+}
+
+const Card: React.FC<IProps> = function ({ movie }) {
   return (
     <div className={styles.container}>
       <img
-        src="https://www.kinoplex.com.br/filmes/images/cartaz/262x388/homem-aranha-sem-volta-para-casa.jpg"
-        alt="image movie"
+        src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+        alt="movie"
       />
 
-      <h4>Homem-Aranha: Sem Volta Para Casa</h4>
+      <h4>{movie.title}</h4>
 
       <div className={styles.rating}>
         <BsStarFill className={styles.icon} />
-        8.6
+        {movie.vote_average}
       </div>
 
       <div className={styles.containerButton}>
-        <button>Ver detalhes</button>
+        <button type="button">Ver detalhes</button>
       </div>
     </div>
   );
 };
-
-export const SearchCard: React.FC = () => <></>;
 
 export default Card;

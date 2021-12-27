@@ -18,6 +18,7 @@
     font-weight: 600;
     line-height: 2.4rem;
     color: $dark-300;
+    min-height: 6.6rem;
 
     white-space: normal;
     text-overflow: ellipsis;
@@ -43,6 +44,7 @@
 
   .containerButton {
     padding: 2.4rem 8px;
+
     button {
       padding: 1.2rem 0;
       width: 100%;
