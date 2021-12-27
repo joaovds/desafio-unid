@@ -44,15 +44,20 @@
 
   .containerButton {
     padding: 2.4rem 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    button {
+    .button {
       padding: 1.2rem 0;
       width: 100%;
+      text-align: center;
 
       background-color: transparent;
       border: 1px solid $primary;
       border-radius: 100px;
 
+      text-decoration: none;
       font-size: 1.6rem;
       font-weight: 500;
       color: $primary;

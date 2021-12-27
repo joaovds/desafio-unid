@@ -9,7 +9,7 @@ const Footer: React.FC = function () {
     <footer>
       <div className={styles.info}>
         <p>Desenvolvido por:</p>
-        <a href="-">João Victor</a>
+        <a href="https://github.com/joaovds">João Victor</a>
       </div>
 
       <img src={tmdbLogo} alt="TMDB" />

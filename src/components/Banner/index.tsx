@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
@@ -29,7 +30,7 @@ const Banner: React.FC = function () {
   }, []);
 
   return (
-    <div className={styles.container} style={{ backgroundImage: '' }}>
+    <div className={styles.container}>
       <img
         src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
         alt="banner"
@@ -42,7 +43,9 @@ const Banner: React.FC = function () {
 
         <p>{movie.overview}</p>
 
-        <button type="button">Ver Detalhes</button>
+        <Link to={`/movie/${movie.id}`} className={styles.button}>
+          Ver Detalhes
+        </Link>
       </div>
     </div>
   );

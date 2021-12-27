@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { BsStarFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
@@ -31,7 +32,9 @@ const Card: React.FC<IProps> = function ({ movie }) {
       </div>
 
       <div className={styles.containerButton}>
-        <button type="button">Ver detalhes</button>
+        <Link to={`movie/${movie.id}`} className={styles.button}>
+          Ver detalhes
+        </Link>
       </div>
     </div>
   );

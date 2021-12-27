@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { FiArrowRight } from 'react-icons/fi';
 
@@ -43,10 +44,10 @@ const Section: React.FC<IProps> = function ({ name, query }) {
       <header>
         <h3>{name}</h3>
 
-        <a href="-">
+        <Link to={`movies/${query}`}>
           Ver Mais
           <FiArrowRight className={styles.icon} />
-        </a>
+        </Link>
       </header>
 
       <section>

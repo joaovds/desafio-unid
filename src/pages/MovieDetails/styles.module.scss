@@ -1,0 +1,151 @@
+@import '../../styles/sass/abstracts/variables';
+@import '../../styles/sass/abstracts/mixins';
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $background;
+
+  .goBack {
+    width: 100%;
+    padding: 2rem;
+    background-color: $dark-500;
+
+    a {
+      font-size: 2rem;
+      color: $dark-400;
+    }
+  }
+
+  main {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    header section {
+      padding: 1.6rem 2rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 2.8rem;
+        line-height: 3rem;
+        font-family: 'Quantico', sans-serif;
+        font-weight: bold;
+        color: $white;
+      }
+
+      span {
+        width: 100%;
+        margin-top: 1.6rem;
+        padding: 1.6rem 0.8rem;
+
+        font-size: 2.2rem;
+        line-height: 3rem;
+        font-family: 'Quantico', sans-serif;
+        font-weight: bold;
+        color: $dark-300;
+
+        border-top: 1px solid $dark-400;
+        border-bottom: 1px solid $dark-400;
+      }
+
+      .rating {
+        margin: 1.6rem 0;
+        display: flex;
+        align-items: center;
+
+        font-size: 2.8rem;
+        color: $yellow;
+
+        .icon {
+          font-size: 2.4rem;
+          margin-right: 0.4rem;
+        }
+      }
+
+      .badges {
+        padding: 0.8rem 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    img.poster {
+      padding: 0 2rem 2rem 2rem;
+      width: 100%;
+    }
+
+    > section {
+      padding: 2rem;
+
+      p {
+        margin: 1.6rem 0;
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+
+        color: $dark-200;
+      }
+    }
+  }
+
+  @include sm {
+    .goBack {
+      padding: 2rem 3rem;
+    }
+
+    main header {
+      display: flex;
+
+      section {
+        order: 1;
+        justify-content: center;
+      }
+
+      img {
+        max-width: 24rem;
+      }
+    }
+  }
+
+  @include md {
+    .goBack {
+      padding: 2rem 4rem;
+    }
+
+    main header {
+      section {
+        padding: 1.6rem 4rem;
+      }
+      img {
+        margin-left: 2rem;
+      }
+    }
+    main > section {
+      padding: 2rem 4rem;
+    }
+  }
+
+  @include lg {
+    .goBack {
+      padding: 2rem 8rem;
+    }
+
+    main header {
+      section {
+        padding: 1.6rem 8rem;
+      }
+      img {
+        max-width: 28rem;
+        margin-left: 6rem;
+      }
+    }
+
+    main > section {
+      padding: 2rem 8rem;
+    }
+  }
+}

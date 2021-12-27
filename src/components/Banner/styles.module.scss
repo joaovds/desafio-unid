@@ -58,9 +58,10 @@
       display: none;
     }
 
-    button {
+    .button {
       padding: 1.6rem 4rem;
 
+      text-decoration: none;
       font-size: 1.6rem;
       font-weight: 500;
       text-transform: uppercase;
@@ -105,7 +106,7 @@
         -webkit-box-orient: vertical;
       }
 
-      button {
+      .button {
         align-self: flex-start;
       }
     }

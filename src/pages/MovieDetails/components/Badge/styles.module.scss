@@ -1,0 +1,14 @@
+@import '../../../../styles/sass/abstracts/variables';
+
+.container {
+  padding: 0.8rem 2.4rem;
+  margin-top: 0.4rem;
+  margin-right: 0.4rem;
+
+  font-size: 1.6rem;
+  color: $dark-300;
+
+  background-color: $background;
+  border: 1px solid $dark-300;
+  border-radius: 100px;
+}
