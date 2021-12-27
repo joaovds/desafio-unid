@@ -1,7 +1,41 @@
 @import '../../styles/sass/abstracts/variables';
+@import '../../styles/sass/abstracts/mixins';
 
 .container {
   width: 100vw;
-  height: 100vh;
   background-color: $background;
+
+  .search_container {
+    margin: 2.4rem 2rem;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 8px;
+    background-color: $dark-500;
+
+    .icon {
+      margin-left: 1.6rem;
+      font-size: 2.4rem;
+      color: $dark-200;
+    }
+
+    input[type='search'] {
+      padding: 2rem;
+      width: 100%;
+
+      font-size: 1.8rem;
+      color: $dark-200;
+
+      border: none;
+      outline: none;
+      background-color: transparent;
+    }
+  }
+
+  @include md {
+    .search_container {
+      display: none;
+    }
+  }
 }

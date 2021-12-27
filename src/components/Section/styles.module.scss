@@ -1,0 +1,47 @@
+@import '../../styles/sass/abstracts/variables';
+@import '../../styles/sass/abstracts/mixins';
+
+.container {
+  padding: 3.2rem 2rem;
+
+  border-top: 2px solid $dark-500;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      color: $dark-200;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: $dark-400;
+
+      display: flex;
+      align-items: center;
+
+      .icon {
+        font-size: 2rem;
+        margin-left: 0.4rem;
+      }
+    }
+  }
+
+  section {
+    padding: 1.6rem 0;
+
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  @include md {
+  }
+
+  @include lg {
+  }
+}
