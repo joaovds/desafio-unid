@@ -1,0 +1,76 @@
+@import '../../styles/sass/abstracts/variables';
+@import '../../styles/sass/abstracts/mixins';
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $background;
+
+  .goBack {
+    width: 100%;
+    padding: 2rem;
+    background-color: $dark-500;
+
+    a {
+      font-size: 2rem;
+      color: $dark-400;
+    }
+  }
+
+  h2 {
+    padding: 4rem 2rem 0 2rem;
+    font-size: 2.6rem;
+    color: $dark-300;
+  }
+
+  section {
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  @include sm {
+    .goBack {
+      padding: 2rem 3rem;
+    }
+
+    h2 {
+      padding: 4rem 3rem 0 3rem;
+    }
+
+    section {
+      padding: 0.8rem 3rem;
+      justify-content: space-between;
+    }
+  }
+
+  @include md {
+    .goBack {
+      padding: 2rem 4rem;
+    }
+
+    h2 {
+      padding: 4rem 4rem 0 4rem;
+    }
+
+    section {
+      padding: 0.8rem 4rem;
+    }
+  }
+
+  @include lg {
+    .goBack {
+      padding: 2rem 8rem;
+    }
+
+    h2 {
+      padding: 4rem 8rem 0 8rem;
+    }
+
+    section {
+      padding: 0.8rem 8rem;
+    }
+  }
+}
