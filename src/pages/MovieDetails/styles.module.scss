@@ -89,6 +89,12 @@
 
         color: $dark-200;
       }
+
+      img {
+        margin-top: 2rem;
+        width: 100%;
+        filter: opacity(40%);
+      }
     }
   }
 

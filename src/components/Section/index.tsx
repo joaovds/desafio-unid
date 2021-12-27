@@ -52,7 +52,7 @@ const Section: React.FC<IProps> = function ({ name, query }) {
 
       <section>
         {movies.map(movie => (
-          <Card movie={movie} />
+          <Card key={movie.id} movie={movie} />
         ))}
       </section>
     </div>

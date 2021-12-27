@@ -1,15 +1,60 @@
-import React from 'react';
-import { Link /* , useParams */ } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { BsStarFill } from 'react-icons/bs';
 
 import Header from '../../components/Header';
 import Badge from './components/Badge';
 import Footer from '../../components/Footer';
 
+import { api } from '../../services/api';
 import styles from './styles.module.scss';
 
+interface Movie {
+  id: number;
+  backdrop_path: string;
+  genres: [{ id: number; name: string }];
+  title: string;
+  tagline: string;
+  overview: string;
+  poster_path: string;
+  release_date: string;
+  runtime: number;
+  vote_average: number;
+}
+
 const MovieDetails: React.FC = function () {
-  // const { idMovie } = useParams();
+  const { idMovie } = useParams<'idMovie'>();
+  const [movie, setMovie] = useState<Movie>({
+    id: 0,
+    backdrop_path: '',
+    vote_average: 0,
+    runtime: 0,
+    release_date: '',
+    poster_path: '',
+    overview: '',
+    tagline: '',
+    title: '',
+    genres: [{ id: 0, name: '' }],
+  });
+  const [trailer, setTrailer] = useState('');
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await api.get(
+        `movie/${idMovie}?api_key=58a3f1af072c32f2b1dc42bd162bbe9e&language=pt-BR`,
+      );
+      setMovie(data);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await api.get(
+        `movie/${idMovie}/videos?api_key=58a3f1af072c32f2b1dc42bd162bbe9e&language=pt-BR`,
+      );
+      setTrailer(data.results[0].key);
+    })();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -22,24 +67,24 @@ const MovieDetails: React.FC = function () {
       <main>
         <header>
           <section>
-            <h1>Homem-Aranha: Sem Volta Para Casa</h1>
+            <h1>{movie.title}</h1>
 
-            <span>O Multiverso está aberto!</span>
+            <span>{movie.tagline}</span>
 
             <div className={styles.rating}>
               <BsStarFill className={styles.icon} />
-              8.6
+              {movie.vote_average}
             </div>
 
             <div className={styles.badges}>
-              <Badge name="Ação" />
-              <Badge name="Ficção" />
-              <Badge name="Ficção científica" />
+              {movie.genres.map(genre => (
+                <Badge key={genre.id} name={genre.name} />
+              ))}
             </div>
           </section>
 
           <img
-            src="https://image.tmdb.org/t/p/original/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg"
+            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             alt="poster"
             className={styles.poster}
           />
@@ -47,16 +92,35 @@ const MovieDetails: React.FC = function () {
 
         <section>
           <p>
-            <b>Enredo:</b> Peter Parker é desmascarado e não consegue mais
-            separar sua vida normal dos grandes riscos de ser um super-herói.
-            Quando ele pede ajuda ao Doutor Estranho, os riscos se tornam ainda
-            mais perigosos, e o forçam a descobrir o que realmente significa ser
-            o Homem-Aranha.
+            <b>Enredo:</b> {movie.overview}
           </p>
 
           <p>
-            <b>Data de estreia:</b> 15/12/2021
+            <b>Data de estreia:</b>{' '}
+            {(() => {
+              return new Date(movie.release_date).toLocaleString('pt-BR', {
+                dateStyle: 'long',
+              });
+            })()}
           </p>
+
+          <p>
+            <b>Duração:</b> {movie.runtime}min
+          </p>
+
+          <iframe
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            width="100%"
+            src={`https://www.youtube.com/watch?v=${trailer}`}
+          />
+
+          <img
+            src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+            alt="cover"
+          />
         </section>
       </main>
 
