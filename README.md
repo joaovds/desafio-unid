@@ -94,7 +94,7 @@ Usado para a padronização e estilização do código.
 - [x] Listagem de filmes com melhores avaliações
 - [x] Componente de sessão separado para caso queira listar outros tipos de sessões
 - [x] Mostrar detalhes de um filme
-- [x] Pesquisa de filme
+- [ ] Pesquisa de filme
 
 **Observações:**
 
