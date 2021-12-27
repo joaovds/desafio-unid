@@ -18,25 +18,21 @@ const Home: React.FC = function () {
       <Banner />
 
       <div className={styles.search_container}>
-        <FiSearch className={styles.icon} />
-
         <input
           type="search"
           placeholder="Search"
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
+
+        <button type="button">
+          <FiSearch className={styles.icon} />
+        </button>
       </div>
 
-      {!search ? (
-        <>
-          <Section name="Em cartaz" query="now_playing" />
-          <Section name="Populares" query="popular" />
-          <Section name="Melhor avaliação" query="top_rated" />
-        </>
-      ) : (
-        <Section name="Resultado da Pesquisa" query="search/movie" />
-      )}
+      <Section name="Em cartaz" query="now_playing" />
+      <Section name="Populares" query="popular" />
+      <Section name="Melhor avaliação" query="top_rated" />
 
       <Footer />
     </div>

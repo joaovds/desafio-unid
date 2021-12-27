@@ -29,26 +29,20 @@ const Section: React.FC<IProps> = function ({
     { id: 0, poster_path: '', title: '', vote_average: 0 },
   ]);
 
-  // const searchFormatString = search.replaceAll(' ', '+');
+  useEffect(() => {
+    (async () => {
+      const { data } = await api.get(
+        `movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
+      );
 
-  useEffect(
-    () => {
-      (async () => {
-        const { data } = await api.get(
-          `movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
-        );
-        setMovies([
-          data.results[0],
-          data.results[1],
-          data.results[2],
-          data.results[3],
-        ]);
-      })();
-    },
-    [
-      /* searchFormatString */
-    ],
-  );
+      setMovies([
+        data.results[0],
+        data.results[1],
+        data.results[2],
+        data.results[3],
+      ]);
+    })();
+  }, []);
 
   return (
     <div className={styles.container}>
