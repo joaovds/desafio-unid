@@ -11,6 +11,7 @@
 
 html {
   font-size: 50%;
+  overflow-x: hidden;
 
   @include sm {
     font-size: 55%;

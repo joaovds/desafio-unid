@@ -54,6 +54,15 @@
       font-size: 1.6rem;
       font-weight: 500;
       color: $primary;
+
+      cursor: pointer;
+      transition: 0.8s;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+        box-shadow: 1px 1px 8px #121212;
+      }
     }
   }
 
@@ -62,6 +71,11 @@
   }
 
   @include md {
+    width: 280px;
+
+    img {
+      height: 420px;
+    }
   }
 
   @include lg {

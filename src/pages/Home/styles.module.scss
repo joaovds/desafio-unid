@@ -33,6 +33,12 @@
     }
   }
 
+  @include sm {
+    .search_container {
+      margin: 2.4rem 3rem;
+    }
+  }
+
   @include md {
     .search_container {
       display: none;

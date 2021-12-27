@@ -39,9 +39,23 @@
     overflow-x: scroll;
   }
 
+  @include sm {
+    padding: 3.2rem 3rem;
+  }
+
   @include md {
+    padding: 3.2rem 4rem;
   }
 
   @include lg {
+    padding: 3.2rem 8rem;
+
+    section {
+      white-space: initial;
+      overflow-x: initial;
+
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

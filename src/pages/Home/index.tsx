@@ -20,7 +20,8 @@ const Home: React.FC = () => {
         <input type="search" placeholder="Search" />
       </div>
 
-      <Section />
+      <Section name="Em cartaz" query="now_playing" />
+      <Section name="Populares" query="popular" />
     </div>
   );
 };

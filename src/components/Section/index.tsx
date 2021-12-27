@@ -5,11 +5,16 @@ import { FiArrowRight } from 'react-icons/fi';
 import Card from '../Card';
 import styles from './styles.module.scss';
 
-const Section: React.FC = () => {
+interface IProps {
+  name: string;
+  query: string;
+}
+
+const Section: React.FC<IProps> = ({ name }) => {
   return (
     <div className={styles.container}>
       <header>
-        <h3>Em cartaz</h3>
+        <h3>{name}</h3>
 
         <a href="">
           Ver Mais
