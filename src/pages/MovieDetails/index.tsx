@@ -41,7 +41,7 @@ const MovieDetails: React.FC = function () {
   useEffect(() => {
     (async () => {
       const { data } = await api.get(
-        `movie/${idMovie}?api_key=58a3f1af072c32f2b1dc42bd162bbe9e&language=pt-BR`,
+        `movie/${idMovie}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
       );
       setMovie(data);
     })();
@@ -50,7 +50,7 @@ const MovieDetails: React.FC = function () {
   useEffect(() => {
     (async () => {
       const { data } = await api.get(
-        `movie/${idMovie}/videos?api_key=58a3f1af072c32f2b1dc42bd162bbe9e&language=pt-BR`,
+        `movie/${idMovie}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
       );
       setTrailer(data.results[0].key);
     })();
