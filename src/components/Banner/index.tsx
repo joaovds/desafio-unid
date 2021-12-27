@@ -15,6 +15,13 @@ const Banner: React.FC = () => {
 
         <h1>Homem-Aranha: Sem Volta Para Casa</h1>
 
+        <p>
+          Peter Parker é desmascarado e não consegue mais separar sua vida
+          normal dos grandes riscos de ser um super-herói. Quando ele pede ajuda
+          ao Doutor Estranho, os riscos se tornam ainda mais perigosos, e o
+          forçam a descobrir o que realmente significa ser o Homem-Aranha.
+        </p>
+
         <button>Ver Detalhes</button>
       </div>
     </div>

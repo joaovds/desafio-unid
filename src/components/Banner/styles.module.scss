@@ -54,6 +54,10 @@
       -webkit-box-orient: vertical;
     }
 
+    p {
+      display: none;
+    }
+
     button {
       padding: 1.6rem 4rem;
 
@@ -65,18 +69,73 @@
       background-color: rgba($color: #a6a6a6, $alpha: 0.08);
       border: 1px solid $dark-100;
       border-radius: 8px;
+
+      cursor: pointer;
+      transition: all 0.8s;
+
+      &:hover {
+        background-color: rgba($color: #a6a6a6, $alpha: 0.2);
+        box-shadow: 1px 1px 8px #121212;
+      }
     }
   }
 
   @include sm {
+    padding: 1.6rem 3rem;
     height: 48vw;
+
+    .content {
+      h1 {
+        text-align: left;
+        align-self: flex-start;
+      }
+
+      p {
+        display: initial;
+
+        font-size: 2rem;
+        line-height: 3.2rem;
+        font-family: 'Quantico', sans-serif;
+        color: #acacac;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      button {
+        align-self: flex-start;
+      }
+    }
   }
 
   @include md {
     height: 36vw;
+
+    .content {
+      .badge {
+        align-self: flex-start;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      p {
+        font-size: 2.2rem;
+      }
+    }
   }
 
   @include lg {
     height: 32vw;
+
+    .content {
+      h1 {
+        font-size: 4rem;
+      }
+    }
   }
 }
