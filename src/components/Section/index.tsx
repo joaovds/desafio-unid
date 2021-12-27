@@ -11,6 +11,7 @@ import styles from './styles.module.scss';
 interface IProps {
   name: string;
   query: string;
+  search?: string;
 }
 
 interface Movie {
@@ -20,24 +21,34 @@ interface Movie {
   vote_average: number;
 }
 
-const Section: React.FC<IProps> = function ({ name, query }) {
+const Section: React.FC<IProps> = function ({
+  name,
+  query /* , search = '' */,
+}) {
   const [movies, setMovies] = useState<Movie[]>([
     { id: 0, poster_path: '', title: '', vote_average: 0 },
   ]);
 
-  useEffect(() => {
-    (async () => {
-      const { data } = await api.get(
-        `movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
-      );
-      setMovies([
-        data.results[0],
-        data.results[1],
-        data.results[2],
-        data.results[3],
-      ]);
-    })();
-  }, []);
+  // const searchFormatString = search.replaceAll(' ', '+');
+
+  useEffect(
+    () => {
+      (async () => {
+        const { data } = await api.get(
+          `movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
+        );
+        setMovies([
+          data.results[0],
+          data.results[1],
+          data.results[2],
+          data.results[3],
+        ]);
+      })();
+    },
+    [
+      /* searchFormatString */
+    ],
+  );
 
   return (
     <div className={styles.container}>
