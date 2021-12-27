@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
 interface IProps {
   name: string;
   query: string;
-  search?: string;
+  // search?: string;
 }
 
 interface Movie {

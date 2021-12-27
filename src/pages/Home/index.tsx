@@ -8,18 +8,9 @@ import Section from '../../components/Section';
 import Footer from '../../components/Footer';
 
 import styles from './styles.module.scss';
-import Card from '../../components/Card';
-
-interface Movie {
-  id: number;
-  poster_path: string;
-  title: string;
-  vote_average: number;
-}
 
 const Home: React.FC = function () {
   const [search, setSearch] = useState('');
-  const [results, setResults] = useState('');
 
   return (
     <div className={styles.container}>
@@ -44,11 +35,7 @@ const Home: React.FC = function () {
           <Section name="Melhor avaliação" query="top_rated" />
         </>
       ) : (
-        <Section
-          name="Resultado da Pesquisa"
-          query="search/movie"
-          search={search}
-        />
+        <Section name="Resultado da Pesquisa" query="search/movie" />
       )}
 
       <Footer />
