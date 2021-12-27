@@ -1,0 +1,82 @@
+@import '../../styles/sass/abstracts/variables';
+@import '../../styles/sass/abstracts/mixins';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 56vw;
+  z-index: 5;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.2);
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 1.6rem 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .badge {
+      padding: 0.4rem 1.6rem;
+      align-self: flex-end;
+
+      font-size: 1.4rem;
+      color: $white;
+
+      border-radius: 10rem;
+      background-color: $primary;
+    }
+
+    h1 {
+      max-height: 40%;
+      font-family: 'Quantico', sans-serif;
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: $white;
+      text-align: center;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    button {
+      padding: 1.6rem 4rem;
+
+      font-size: 1.6rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $dark-100;
+
+      background-color: rgba($color: #a6a6a6, $alpha: 0.08);
+      border: 1px solid $dark-100;
+      border-radius: 8px;
+    }
+  }
+
+  @include sm {
+    height: 48vw;
+  }
+
+  @include md {
+    height: 36vw;
+  }
+
+  @include lg {
+    height: 32vw;
+  }
+}
