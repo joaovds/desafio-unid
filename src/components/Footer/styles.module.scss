@@ -1,0 +1,42 @@
+@import '../../styles/sass/abstracts/variables';
+@import '../../styles/sass/abstracts/mixins';
+
+footer {
+  width: 100%;
+  padding: 1.6rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: $dark-500;
+
+  .info {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+    p {
+      color: $dark-400;
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+
+  img {
+    width: 8rem;
+  }
+
+  @include sm {
+    padding: 1.6rem 3rem;
+  }
+
+  @include md {
+    padding: 1.6rem 4rem;
+  }
+
+  @include lg {
+    padding: 1.6rem 8rem;
+  }
+}

@@ -5,6 +5,7 @@ import { FiSearch } from 'react-icons/fi';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Section from '../../components/Section';
+import Footer from '../../components/Footer';
 
 import styles from './styles.module.scss';
 
@@ -23,6 +24,8 @@ const Home: React.FC = function () {
       <Section name="Em cartaz" query="now_playing" />
       <Section name="Populares" query="popular" />
       <Section name="Melhor avaliação" query="top_rated" />
+
+      <Footer />
     </div>
   );
 };
